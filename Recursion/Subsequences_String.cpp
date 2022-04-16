@@ -1,8 +1,23 @@
-#include<iostream>
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-int main(){
-    
-    return 0;
+void printSubsequence(string input, string output)
+{
+	if (input.empty()) {
+		cout << output << endl;
+		return;
+	}
+	printSubsequence(input.substr(1), output + input[0]);
+	printSubsequence(input.substr(1), output);
+}
+
+int main()
+{
+	
+	string output = "";
+	string input = "abcd";
+
+	printSubsequence(input, output);
+
+	return 0;
 }
